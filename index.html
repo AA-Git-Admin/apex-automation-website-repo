@@ -759,6 +759,68 @@ body {
         font-size: 16px;
     }
 }
+/* Powered By Section */
+.powered-by {
+    padding: 60px 20px;
+    background: var(--off-white);
+    text-align: center;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.powered-by h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--slate-medium);
+    margin-bottom: 32px;
+    font-weight: 700;
+}
+
+.logo-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.logo-strip:hover {
+    opacity: 1;
+}
+
+.integration-logo {
+    height: 32px;
+    filter: grayscale(100%);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--slate-medium);
+    font-weight: 600;
+}
+
+.integration-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    color: var(--gray-900);
+}
+
+.integration-logo svg {
+    height: 24px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .logo-strip {
+        gap: 32px;
+    }
+    .integration-logo span {
+        font-size: 14px;
+    }
+}
     </style>
 </head>
 <body>
@@ -798,32 +860,37 @@ body {
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span class="badge-dot">●</span>
-                    Edmonton's Exclusive Automation Partner
+                    Accepting First 3 Founding Members
                 </div>
-                <h1 class="hero-title">Turn <span style="color: var(--accent-green)">Missed Calls</span> Into Booked Jobs Automatically</h1>
-                <p class="hero-subtitle">Stop losing revenue to your voicemail. We build custom landing pages and AI automation systems that capture leads while you're on the job site.</p>
+                <h1 class="hero-title">
+                    Turn Missed Calls Into Booked Jobs—Automatically
+                </h1>
+                <h1 class="hero-title">
+                    Turn Missed Calls Into Booked Jobs—Automatically
+                </h1>
+                <p class="hero-subtitle">
+                    Custom automation systems for Edmonton landscaping companies. Never miss a lead with AI call handling, automated booking, and CRM integration—while you focus on running jobs.
+                </p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary btn-large">Claim My Service Area</a>
+                    <a href="#contact" class="btn btn-primary btn-large">Apply for Founding Member Spot</a>
                     <a href="#journey" class="btn btn-secondary btn-large">See How It Works</a>
                 </div>
-                
                 <div class="hero-visual">
                     <div class="hero-stat">
                         <div class="hero-stat-icon">📞</div>
-                        <div class="hero-stat-label">Instant Call-Backs</div>
+                        <div class="hero-stat-label">24/7 Call Capture</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-icon">💬</div>
+                        <div class="hero-stat-label">SMS Booking Links</div>
                     </div>
                     <div class="hero-stat">
                         <div class="hero-stat-icon">📅</div>
-                        <div class="hero-stat-label">Auto-Booking</div>
+                        <div class="hero-stat-label">Automated Scheduling</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-icon">🏗️</div>
-                        <div class="hero-stat-label">Landscaping Focus</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-icon">💰</div>
-                        <div class="hero-stat-label">Zero Lead Loss</div>
+                        <div class="hero-stat-icon">📊</div>
+                        <div class="hero-stat-label">CRM Integration</div>
                     </div>
                 </div>
             </div>
@@ -831,177 +898,198 @@ body {
     </section>
 
     <!-- Journey Section -->
-    <section id="journey" class="journey-section">
+    <section class="journey-section" id="journey">
         <div class="container">
             <div class="section-header">
-                <h2>The Foundational Member Journey</h2>
-                <p>We're building the future of landscaping operations. Here's how we transform your business step-by-step.</p>
+                <h2>How It Works</h2>
+                <p>From the moment a customer calls to getting them booked in your calendar—here's exactly what happens. Never miss a lead again.</p>
             </div>
 
+            <!-- Visual Journey Overview -->
             <div class="journey-visual">
-                <!-- Phase 1: Capture -->
                 <div class="journey-flow">
                     <div class="flow-step">
-                        <div class="flow-icon">📱</div>
-                        <div class="flow-label">Missed Call</div>
-                        <div class="flow-detail">Lead hangs up</div>
+                        <div class="flow-icon">📞</div>
+                        <div class="flow-label">Customer Calls</div>
+                        <div class="flow-detail">Any time, any day</div>
                     </div>
+                    
                     <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <div class="flow-icon">⚡</div>
-                        <div class="flow-label">Instant Text</div>
-                        <div class="flow-detail">"Sorry we missed you!"</div>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <div class="flow-icon">🛬</div>
-                        <div class="flow-label">Custom Landing Page</div>
-                        <div class="flow-detail">Converted content</div>
-                    </div>
-                </div>
-
-                <div class="flow-divider"></div>
-
-                <!-- Phase 2: Nurture -->
-                <div class="journey-flow">
-                    <div class="flow-step">
-                        <div class="flow-icon">📝</div>
-                        <div class="flow-label">Quote Request</div>
-                        <div class="flow-detail">Project info captured</div>
-                    </div>
-                    <div class="flow-arrow">→</div>
+                    
                     <div class="flow-step">
                         <div class="flow-icon">🤖</div>
-                        <div class="flow-label">AI Qualification</div>
-                        <div class="flow-detail">Automated follow-up</div>
+                        <div class="flow-label">AI Answers</div>
+                        <div class="flow-detail">Captures info</div>
                     </div>
+                    
                     <div class="flow-arrow">→</div>
+                    
                     <div class="flow-step">
-                        <div class="flow-icon">💼</div>
-                        <div class="flow-label">Job Booked</div>
-                        <div class="flow-detail">Ready for site visit</div>
+                        <div class="flow-icon">💬</div>
+                        <div class="flow-label">Booking Link Sent</div>
+                        <div class="flow-detail">Via SMS</div>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-step">
+                        <div class="flow-icon">📅</div>
+                        <div class="flow-label">Customer Books</div>
+                        <div class="flow-detail">Picks their time</div>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-step">
+                        <div class="flow-icon">📊</div>
+                        <div class="flow-label">Logged in CRM</div>
+                        <div class="flow-detail">Full tracking</div>
                     </div>
                 </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="#contact" class="btn btn-primary btn-large">Apply for Foundational Membership</a>
             </div>
         </div>
     </section>
 
-    <!-- Automation Features -->
-    <section id="automation" class="automation-section">
+    <!-- What We Automate Section -->
+    <section class="automation-section" id="automation">
         <div class="container">
             <div class="section-header">
-                <h2>What We Automate</h2>
-                <p>Hand-built systems tailored specifically for heavy-duty service businesses.</p>
+                <h2>What We Build For You</h2>
+                <p>Custom-built automation systems focused on capturing and converting leads into booked appointments.</p>
             </div>
 
             <div class="automation-grid">
                 <div class="automation-card">
                     <div class="automation-icon">🤖</div>
-                    <h3>AI Lead Capture</h3>
-                    <p>Stop playing phone tag. Our AI interacts with customers via text the second you miss a call.</p>
-                    <ul class="automation-features">
-                        <li>Instant SMS Response</li>
-                        <li>Automated Appointment Booking</li>
-                        <li>Lead Qualification Questions</li>
-                    </ul>
+                    <h3>AI Call Handler</h3>
+                    <p>Answers every call 24/7, qualifies leads, and captures their information so you never miss an opportunity.</p>
                 </div>
 
                 <div class="automation-card">
-                    <div class="automation-icon">🚀</div>
-                    <h3>Landing Page Ops</h3>
-                    <p>High-converting, mobile-optimized pages designed specifically for landscaping services.</p>
-                    <ul class="automation-features">
-                        <li>SEO Optimized for Edmonton</li>
-                        <li>Direct Booking Integration</li>
-                        <li>Custom Photo Gallery Logic</li>
-                    </ul>
+                    <div class="automation-icon">📅</div>
+                    <h3>Automated Booking</h3>
+                    <p>Send booking links via SMS so customers can schedule their own appointments directly into your calendar.</p>
                 </div>
 
                 <div class="automation-card">
-                    <div class="automation-icon">⛓️</div>
+                    <div class="automation-icon">📊</div>
                     <h3>CRM Integration</h3>
-                    <p>Your leads should live in one place. We sync everything with your favorite job management tools.</p>
-                    <ul class="automation-features">
-                        <li>Automatic Lead Entry</li>
-                        <li>Follow-up Task Reminders</li>
-                        <li>Review Request Cycles</li>
-                    </ul>
+                    <p>Every lead, call, and interaction logged automatically in Airtable so you have full visibility into your pipeline.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Founding Member Tiers -->
-    <section id="founding" class="founding-section">
+    <!-- Founding Member Section -->
+    <section class="founding-section" id="founding">
         <div class="container">
             <div class="founding-content">
-                <div class="founding-badge">Limited: 0/5 Spots Full</div>
-                <h2>Foundational Member Program</h2>
-                <p>We are looking for 5 Edmonton landscaping experts to help us build the ultimate industry blueprint. In exchange, you get enterprise-level automation at founder rates.</p>
-                
+                <span class="founding-badge">⚡ LIMITED OPPORTUNITY</span>
+                <h2>Become a Founding Member</h2>
+                <p>We're accepting our first 3 landscaping companies to build automation systems for. In exchange for being early, you get founding member benefits and discounted pricing.</p>
+
                 <div class="founding-grid">
                     <div class="founding-benefit">
-                        <div class="benefit-icon">💎</div>
-                        <h3>Preferred Pricing</h3>
-                        <p>Lock in early-adopter rates for life as we scale our features.</p>
+                        <div class="benefit-icon">💰</div>
+                        <h3>50% Off First 6 Months</h3>
+                        <p>Lock in founding member pricing for your first 6 months as an early adopter.</p>
                     </div>
+
                     <div class="founding-benefit">
-                        <div class="benefit-icon">🛠️</div>
-                        <h3>Deep Integration</h3>
-                        <p>We build your custom features into the core platform first.</p>
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Custom Built</h3>
+                        <p>We build your system from scratch based on YOUR workflow, not a template.</p>
                     </div>
+
                     <div class="founding-benefit">
-                        <div class="benefit-icon">📍</div>
-                        <h3>Area Exclusivity</h3>
-                        <p>We won't work with your direct competitors during your tenure.</p>
+                        <div class="benefit-icon">🤝</div>
+                        <h3>Direct Access</h3>
+                        <p>Work directly with the founders. No support tickets. No call centers.</p>
                     </div>
                 </div>
-
-                <a href="#contact" class="btn btn-primary btn-large">Check Eligibility</a>
+                
+                <div style="margin-top: 48px;">
+                    <a href="#contact" class="btn btn-primary btn-large">Apply for Founding Member Spot</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <!-- Contact Form Section -->
+    <section class="contact-section" id="contact">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-header">
-                    <div class="contact-badge">Application Phase</div>
-                    <h2>Scale Your Operations</h2>
-                    <p>Apply to become a Foundational Member. We'll reach out to discuss your current setup and automation goals.</p>
+                    <div class="contact-badge">⚡ FOUNDING MEMBER APPLICATION</div>
+                    <h2>Apply to Be One of Our First 3</h2>
+                    <p>Tell us about your business and we'll reach out within 24 hours to discuss your custom automation system and founding member pricing.</p>
                 </div>
 
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <label for="name">Business Name</label>
-                        <input type="text" id="name" name="name" required placeholder="e.g. Edmonton Landscaping Co.">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="form-group">
-                        <label for="contact-person">Owner / Primary Contact</label>
-                        <input type="text" id="contact-person" name="contact-person" required placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="(780) 555-0123">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Current Operations (What's your biggest bottleneck?)</label>
-                        <textarea id="message" name="message" required placeholder="Tell us about your current call/booking volume..."></textarea>
-                    </div>
-                    <div class="form-submit">
-                        <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
-                    </div>
-                    <p class="form-privacy">🔒 Your data is private. We strictly limit our client list to ensure service quality.</p>
-                </form>
 
-                <div class="success-message" id="successMessage">
-                    <h3>Application Sent!</h3>
-                    <p>We'll look over your operations and text you within 24 hours.</p>
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="revenue">Estimated Annual Revenue *</label>
+                        <input type="text" id="revenue" name="revenue" placeholder="e.g., $500K, $1M+" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">What's your biggest bottleneck right now?</label>
+                        <textarea id="message" name="message" placeholder="e.g., Missing leads after hours, slow quoting, no time for follow-ups..."></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-large">Submit Application →</button>
+                    </div>
+
+                    <p class="form-privacy">🔒 Your information is secure. We'll never share it with anyone.</p>
+
+                    <div class="success-message" id="successMessage">
+                        ✓ Application submitted! We'll reach out within 24 hours.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Powered By Section -->
+    <section class="powered-by">
+        <div class="container">
+            <h3>Powered By Our Core Integrations</h3>
+            <div class="logo-strip">
+                <div class="integration-logo">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6.5c-3.03 0-5.5 2.47-5.5 5.5s2.47 5.5 5.5 5.5 5.5-2.47 5.5-5.5-2.47-5.5-5.5-5.5zm0 9c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                    <span>Make.com</span>
+                </div>
+                <div class="integration-logo">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 12A10 10 0 0 1 12 2v20A10 10 0 0 1 2 12Z"/></svg>
+                    <span>Airtable</span>
+                </div>
+                <div class="integration-logo">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="3" x2="16" y2="21"/><line x1="8" y1="3" x2="8" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                    <span>Cal.com</span>
+                </div>
+                <div class="integration-logo">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"/></svg>
+                    <span>Retell AI</span>
                 </div>
             </div>
         </div>
@@ -1016,61 +1104,128 @@ body {
                         <span class="logo-icon">⚡</span>
                         <span class="logo-text">Apex Automation</span>
                     </div>
-                    <p>Building Edmonton's leanest service operations through custom AI and web automation systems.</p>
+                    <p>Custom automation systems for Edmonton landscaping businesses. Built on Make.com + Airtable.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>Navigation</h4>
+                    <h4>Company</h4>
                     <a href="#journey">How It Works</a>
                     <a href="#automation">What We Automate</a>
-                    <a href="#founding">Founding Program</a>
+                    <a href="#founding">Founding Members</a>
                 </div>
                 <div class="footer-column">
-                    <h4>Program</h4>
-                    <a href="#contact">Apply for 0/5 Spots</a>
-                    <a href="#">Terms of Exclusivity</a>
-                    <a href="#">Privacy Policy</a>
+                    <h4>Contact</h4>
+                    <a href="mailto:Product1@apxautomation.com">Product1@apxautomation.com</a>
+                    <a href="#contact">Apply Now</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Apex Automation Systems. Edmonton, AB.</p>
+                <p>&copy; 2024 Apex Automation. Built for landscapers by automation experts.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Form Submission Handling
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // In a real scenario, this would post to a webhook
-            contactForm.style.display = 'none';
-            successMessage.classList.add('show');
-            
-            // Log submission for verification during development
-            console.log('Form Submitted:', new FormData(contactForm));
-        });
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    const spans = mobileMenuBtn.querySelectorAll('span');
+    if (mobileMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+});
 
-        // Mobile Menu Logic
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        const spans = mobileMenuBtn.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    });
+});
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                mobileMenu.classList.remove('active');
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
+        }
+    });
+});
+
+// Contact form submission
+const contactForm = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            name: this.querySelector('#name').value,
+            company: this.querySelector('#company').value,
+            email: this.querySelector('#email').value,
+            phone: this.querySelector('#phone').value,
+            revenue: this.querySelector('#revenue').value,
+            message: this.querySelector('#message').value,
+            timestamp: new Date().toISOString(),
+            source: 'founding_member_application',
+            page: window.location.href
+        };
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        // Show loading state
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.disabled = true;
+        
+        try {
+    const response = await fetch('https://hook.us2.make.com/ldx65h65783w54xjbyx39m502o5o9rc4', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    });
+    
+    if (!response.ok) throw new Error('Submission failed');
+    
+    // Success state
+    successMessage.classList.add('show');
+    this.reset();
+    
+    // Track conversion (if using Google Analytics)
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'generate_lead', {
+            'event_category': 'Playbook Download',
+            'event_label': formData.email
         });
+    }
+    
+} catch (error) {
+    console.error('Form submission error:', error);
+    alert('Oops! Something went wrong. Please email us at Product1@apxautomation.com');
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+}
+    });
+}
+
+console.log('Apex Automation - Founding Member Site');
     </script>
 </body>
 </html>
