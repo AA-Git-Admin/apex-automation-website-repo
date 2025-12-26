@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turn missed calls into booked jobs automatically. Custom automation systems for Edmonton landscaping businesses.">
+    <title>Apex Automation - Turn Missed Calls Into Booked Jobs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Dark Color Palette */
+    --primary-navy: #1A2B4A;
+    --secondary-navy: #0D1B2A;
+    --accent-green: #00C896;
+    --dark-green: #00A37A;
+    --slate-dark: #334155;
+    --slate-medium: #475569;
+    --slate-light: #64748B;
+    
+    /* Neutrals */
+    --white: #FFFFFF;
+    --off-white: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-600: #475569;
+    --gray-800: #1E293B;
+    --gray-900: #0F172A;
+    
+    /* Accents */
+    --yellow: #FCD34D;
+    
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--gray-900);
+    line-height: 1.6;
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--secondary-navy);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--accent-green);
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+}
+
+.logo-icon {
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--gray-300);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-green);
+}
+
+.nav-cta {
+    background: var(--accent-green);
+    color: var(--secondary-navy) !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.nav-cta:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--primary-navy);
+    padding: 20px;
+}
+
+.mobile-menu a {
+    padding: 12px 0;
+    text-decoration: none;
+    color: var(--gray-300);
+    font-weight: 500;
+    border-bottom: 1px solid var(--slate-dark);
+}
+
+.mobile-menu .mobile-cta {
+    background: var(--accent-green);
+    color: var(--secondary-navy) !important;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 10px;
+    border: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--secondary-navy) 0%, var(--primary-navy) 100%);
+    padding: 80px 20px 60px;
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 200, 150, 0.2);
+    border: 1px solid var(--accent-green);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    color: var(--accent-green);
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--gray-300);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.hero-visual {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+}
+
+.hero-stat {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hero-stat-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.hero-stat-label {
+    font-size: 14px;
+    color: var(--gray-300);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.btn-primary {
+    background: var(--accent-green);
+    color: var(--secondary-navy);
+}
+
+.btn-primary:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--primary-navy);
+}
+
+/* Journey Section */
+.journey-section {
+    padding: 100px 20px;
+    background: var(--off-white);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.section-header h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: var(--slate-medium);
+    line-height: 1.7;
+}
+
+/* Visual Journey Overview */
+.journey-visual {
+    background: var(--white);
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    margin-bottom: 80px;
+    border: 2px solid var(--accent-green);
+}
+
+.journey-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.journey-flow:last-child {
+    margin-bottom: 0;
+}
+
+.flow-step {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 20px 12px;
+    background: var(--gray-100);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.flow-step:hover {
+    background: var(--accent-green);
+    transform: translateY(-4px);
+}
+
+.flow-step:hover .flow-label,
+.flow-step:hover .flow-detail {
+    color: var(--secondary-navy);
+}
+
+.flow-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.flow-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.flow-detail {
+    font-size: 12px;
+    color: var(--slate-medium);
+    font-weight: 500;
+}
+
+.flow-arrow {
+    font-size: 28px;
+    color: var(--accent-green);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.flow-divider {
+    height: 2px;
+    background: linear-gradient(to right, var(--gray-200) 0%, var(--accent-green) 50%, var(--gray-200) 100%);
+    margin: 32px 0;
+}
+
+/* What We Automate Section */
+.automation-section {
+    padding: 100px 20px;
+    background: var(--primary-navy);
+    color: var(--white);
+}
+
+.automation-section .section-header h2,
+.automation-section .section-header p {
+    color: var(--white);
+}
+
+.automation-section .section-header p {
+    color: var(--gray-300);
+}
+
+.automation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.automation-card {
+    background: var(--secondary-navy);
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 200, 150, 0.2);
+    transition: all 0.3s;
+}
+
+.automation-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-green);
+    box-shadow: 0 8px 24px rgba(0, 200, 150, 0.2);
+}
+
+.automation-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.automation-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--white);
+}
+
+.automation-card p {
+    color: var(--gray-300);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.automation-features {
+    list-style: none;
+}
+
+.automation-features li {
+    color: var(--gray-300);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 14px;
+}
+
+.automation-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: 700;
+}
+
+/* Founding Member Section */
+.founding-section {
+    padding: 100px 20px;
+    background: var(--off-white);
+}
+
+.founding-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.founding-badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--gray-900);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.founding-content h2 {
+    font-size: 42px;
+    color: var(--gray-900);
+    margin-bottom: 20px;
+}
+
+.founding-content > p {
+    font-size: 18px;
+    color: var(--slate-medium);
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.founding-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 48px 0;
+}
+
+.founding-benefit {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.founding-benefit h3 {
+    font-size: 20px;
+    color: var(--gray-900);
+    margin-bottom: 12px;
+}
+
+.founding-benefit p {
+    font-size: 15px;
+    color: var(--slate-medium);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Contact Form Section */
+.contact-section {
+    padding: 100px 20px;
+    background: var(--secondary-navy);
+    color: var(--white);
+}
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.contact-badge {
+    display: inline-block;
+    background: var(--accent-green);
+    color: var(--secondary-navy);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    font-size: 13px;
+}
+
+.contact-header h2 {
+    font-size: 42px;
+    margin-bottom: 16px;
+    color: var(--white);
+}
+
+.contact-header p {
+    font-size: 18px;
+    color: var(--gray-300);
+}
+
+.contact-form {
+    background: var(--primary-navy);
+    padding: 48px;
+    border-radius: 12px;
+    border: 2px solid var(--accent-green);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--white);
+    font-size: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid var(--slate-dark);
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: var(--font-primary);
+    background: var(--secondary-navy);
+    color: var(--white);
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-green);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.form-submit button {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-privacy {
+    text-align: center;
+    font-size: 13px;
+    color: var(--gray-300);
+    margin-top: 16px;
+}
+
+.success-message {
+    display: none;
+    background: var(--dark-green);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background: var(--gray-900);
+    color: var(--gray-300);
+    padding: 60px 20px 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand .logo {
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--white);
+}
+
+.footer-column a {
+    display: block;
+    color: var(--gray-300);
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-column a:hover {
+    color: var(--accent-green);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--slate-dark);
+    padding-top: 30px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .mobile-menu.active {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+    }
+    
+    .hero-visual {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .journey-visual {
+        padding: 24px;
+    }
+    
+    .journey-flow {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .flow-step {
+        width: 100%;
+        min-width: 0;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+        font-size: 24px;
+    }
+    
+    .contact-form {
+        padding: 32px 24px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .section-header h2 {
+        font-size: 26px;
+    }
+    
+    .btn-large {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Apex Automation</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#journey">How It Works</a>
+                    <a href="#automation">What We Automate</a>
+                    <a href="#founding">Founding Members</a>
+                    <a href="#contact" class="nav-cta">Apply Now</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#journey">How It Works</a>
+        <a href="#automation">What We Automate</a>
+        <a href="#founding">Founding Members</a>
+        <a href="#contact" class="mobile-cta">Apply Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot">●</span>
+                    Edmonton's Exclusive Automation Partner
+                </div>
+                <h1 class="hero-title">Turn <span style="color: var(--accent-green)">Missed Calls</span> Into Booked Jobs Automatically</h1>
+                <p class="hero-subtitle">Stop losing revenue to your voicemail. We build custom landing pages and AI automation systems that capture leads while you're on the job site.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary btn-large">Claim My Service Area</a>
+                    <a href="#journey" class="btn btn-secondary btn-large">See How It Works</a>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-stat">
+                        <div class="hero-stat-icon">📞</div>
+                        <div class="hero-stat-label">Instant Call-Backs</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-icon">📅</div>
+                        <div class="hero-stat-label">Auto-Booking</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-icon">🏗️</div>
+                        <div class="hero-stat-label">Landscaping Focus</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-icon">💰</div>
+                        <div class="hero-stat-label">Zero Lead Loss</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Foundational Member Journey</h2>
+                <p>We're building the future of landscaping operations. Here's how we transform your business step-by-step.</p>
+            </div>
+
+            <div class="journey-visual">
+                <!-- Phase 1: Capture -->
+                <div class="journey-flow">
+                    <div class="flow-step">
+                        <div class="flow-icon">📱</div>
+                        <div class="flow-label">Missed Call</div>
+                        <div class="flow-detail">Lead hangs up</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">⚡</div>
+                        <div class="flow-label">Instant Text</div>
+                        <div class="flow-detail">"Sorry we missed you!"</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🛬</div>
+                        <div class="flow-label">Custom Landing Page</div>
+                        <div class="flow-detail">Converted content</div>
+                    </div>
+                </div>
+
+                <div class="flow-divider"></div>
+
+                <!-- Phase 2: Nurture -->
+                <div class="journey-flow">
+                    <div class="flow-step">
+                        <div class="flow-icon">📝</div>
+                        <div class="flow-label">Quote Request</div>
+                        <div class="flow-detail">Project info captured</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🤖</div>
+                        <div class="flow-label">AI Qualification</div>
+                        <div class="flow-detail">Automated follow-up</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">💼</div>
+                        <div class="flow-label">Job Booked</div>
+                        <div class="flow-detail">Ready for site visit</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#contact" class="btn btn-primary btn-large">Apply for Foundational Membership</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation Features -->
+    <section id="automation" class="automation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Automate</h2>
+                <p>Hand-built systems tailored specifically for heavy-duty service businesses.</p>
+            </div>
+
+            <div class="automation-grid">
+                <div class="automation-card">
+                    <div class="automation-icon">🤖</div>
+                    <h3>AI Lead Capture</h3>
+                    <p>Stop playing phone tag. Our AI interacts with customers via text the second you miss a call.</p>
+                    <ul class="automation-features">
+                        <li>Instant SMS Response</li>
+                        <li>Automated Appointment Booking</li>
+                        <li>Lead Qualification Questions</li>
+                    </ul>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-icon">🚀</div>
+                    <h3>Landing Page Ops</h3>
+                    <p>High-converting, mobile-optimized pages designed specifically for landscaping services.</p>
+                    <ul class="automation-features">
+                        <li>SEO Optimized for Edmonton</li>
+                        <li>Direct Booking Integration</li>
+                        <li>Custom Photo Gallery Logic</li>
+                    </ul>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-icon">⛓️</div>
+                    <h3>CRM Integration</h3>
+                    <p>Your leads should live in one place. We sync everything with your favorite job management tools.</p>
+                    <ul class="automation-features">
+                        <li>Automatic Lead Entry</li>
+                        <li>Follow-up Task Reminders</li>
+                        <li>Review Request Cycles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founding Member Tiers -->
+    <section id="founding" class="founding-section">
+        <div class="container">
+            <div class="founding-content">
+                <div class="founding-badge">Limited: 0/5 Spots Full</div>
+                <h2>Foundational Member Program</h2>
+                <p>We are looking for 5 Edmonton landscaping experts to help us build the ultimate industry blueprint. In exchange, you get enterprise-level automation at founder rates.</p>
+                
+                <div class="founding-grid">
+                    <div class="founding-benefit">
+                        <div class="benefit-icon">💎</div>
+                        <h3>Preferred Pricing</h3>
+                        <p>Lock in early-adopter rates for life as we scale our features.</p>
+                    </div>
+                    <div class="founding-benefit">
+                        <div class="benefit-icon">🛠️</div>
+                        <h3>Deep Integration</h3>
+                        <p>We build your custom features into the core platform first.</p>
+                    </div>
+                    <div class="founding-benefit">
+                        <div class="benefit-icon">📍</div>
+                        <h3>Area Exclusivity</h3>
+                        <p>We won't work with your direct competitors during your tenure.</p>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-primary btn-large">Check Eligibility</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-header">
+                    <div class="contact-badge">Application Phase</div>
+                    <h2>Scale Your Operations</h2>
+                    <p>Apply to become a Foundational Member. We'll reach out to discuss your current setup and automation goals.</p>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Business Name</label>
+                        <input type="text" id="name" name="name" required placeholder="e.g. Edmonton Landscaping Co.">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-person">Owner / Primary Contact</label>
+                        <input type="text" id="contact-person" name="contact-person" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(780) 555-0123">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Current Operations (What's your biggest bottleneck?)</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your current call/booking volume..."></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
+                    </div>
+                    <p class="form-privacy">🔒 Your data is private. We strictly limit our client list to ensure service quality.</p>
+                </form>
+
+                <div class="success-message" id="successMessage">
+                    <h3>Application Sent!</h3>
+                    <p>We'll look over your operations and text you within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">Apex Automation</span>
+                    </div>
+                    <p>Building Edmonton's leanest service operations through custom AI and web automation systems.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <a href="#journey">How It Works</a>
+                    <a href="#automation">What We Automate</a>
+                    <a href="#founding">Founding Program</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Program</h4>
+                    <a href="#contact">Apply for 0/5 Spots</a>
+                    <a href="#">Terms of Exclusivity</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Apex Automation Systems. Edmonton, AB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form Submission Handling
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real scenario, this would post to a webhook
+            contactForm.style.display = 'none';
+            successMessage.classList.add('show');
+            
+            // Log submission for verification during development
+            console.log('Form Submitted:', new FormData(contactForm));
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
